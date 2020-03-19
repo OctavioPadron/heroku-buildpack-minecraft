@@ -8,10 +8,12 @@ secret_key = ${AWS_SECRET_KEY}
 EOF
   if [ -d world ]; then
     s3cmd sync world/ s3://${AWS_BUCKET}/world/
+    s3cmd sync mods/ s3://${AWS_BUCKET}/mods/
   else
     mkdir -p world
     cd world
     s3cmd get --recursive s3://${AWS_BUCKET}/world/
+    s3cmd get --recursive s3://${AWS_BUCKET}/mods/
     cd ..
   fi
   rm .s3cfg
