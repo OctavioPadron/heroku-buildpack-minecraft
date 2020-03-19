@@ -60,8 +60,6 @@ curl --silent -o ngrok.zip -L "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable
 unzip ngrok.zip -d $BUILD_DIR/bin > /dev/null 2>&1
 echo "done"
 
-minecraft_version=${MINECRAFT_VERSION:-"1.14.4"}
-
 minecraft_version=${MINECRAFT_VERSION:-"1.12"}
 
 if echo "$minecraft_version" | grep -q '^1\.12.2$'; then
